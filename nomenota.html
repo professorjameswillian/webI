@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+   <style>
+       
+        body{
+            text-align: center;
+            background-color: lightblue;
+                }
+        header{
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            height: 10%;
+            width: 100%;
+            }
+        nav{
+            position: fixed;
+            top: 10%;
+            left: 0%;
+            height: 10%;
+            width: 100%;
+        }
+        main{
+            position: fixed;
+            top: 20%;
+            left: 0%;
+            height: 70%;
+            width: 100%;
+            
+        }
+        
+        footer{
+            position: fixed;
+            top: 90%;
+            left: 0%;
+            height: 10%;
+            width: 100%;
+        }
+   </style>
+    <title>Formulário</title>
+</head>
+<body>
+    <header>
+        <h1>Nome, nota e menção</h1>
+    </header>
+
+    <main>
+		
+        <form action="nomenota.html">
+        <h3>Digite o nome e a nota para ver sua menção:</h3>
+          <label for="nome">Nome:</label><br>
+          <input type="text" id="nome" name="nome" value=""><br>
+          <label for="nota">Digite a nota de 0 a 10:</label><br>
+          <input type="number" id="nota" name="nota" value=""><br>
+           <br /><br />
+          <input type="reset" value="Limpa">
+          <input type="submit" value="Enviar" onclick="mencao()">  
+        </form>
+        <script>
+        function mencao( ){
+        var nome, not, mencao;
+        nome = document.getElementById("nome").value;
+        not = parseFloat(document.getElementById("nota").value);
+        
+        if(not >= 9){
+            mencao = "MB";
+        }
+        else{
+            if(not >= 7){
+            mencao = "B";
+        }
+        else{
+            if(not >= 5){
+            mencao = "R";
+        }
+        else{
+            mencao = "I";
+        }
+        }
+        }
+        
+        alert("A menção do " + nome + " é " + mencao);
+        
+        }
+        </script>
+            
+       </main>
+            <footer>
+                <p> Programação WEBI - Professor James Willian Mendes Effgen</p>
+            </footer>
+</body>
+</html>
